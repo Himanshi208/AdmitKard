@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="admitKard.css" media="screen"/>
+</head>
+<body>
+  <div class="class3">
+      <img src="tech.png" alt="Admitkard" id="image">
+      <br><br><br><br>
+      <h2 id="heading">Welcome to AdmitKard</h2><br>
+      <h4 id="heading">In order to provide you with <br> a customer experience <br> we need to ask you few questions</h4><br><br>
+    <form class="myForm">
+      
+      <input class="submit" type="submit" id="submit" value="Get Started"> 
+      <p style="text-align:center; font-size: 12px;">This will take 5 minutes*.</p>
+
+    </form> 
+  </div>
+  <script>
+    class Validate
+    {
+      constructor(inputArguments)
+      {
+        this.form = inputArguments.form;
+        this.submit = inputArguments.submit;
+      }
+
+      init()
+      {
+        this.submit[0].addEventListener('click' , () => {this.getSubmit()} ) ;
+      }
+
+      getSubmit()
+      {
+        window.open("https://www.admitkard.com/");
+      }
+
+    }
+
+    window.onload = function() {
+    var _form = document.getElementsByClassName("myForm")[0];
+    var inputArguments = {
+      form : _form,
+      submit : _form.querySelectorAll(".submit"),
+    };
+    var validate = new Validate(inputArguments);
+    validate.init();
+    };
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="admitKard.css" media="screen"/>
+</head>
+<body>
+  <div class="class3">
+      <img src="otp.png" alt="Admitkard" id="image" >
+      <br><br><br><br>
+      <h2 id="heading">Please Verify Mobile Number</h2><br>
+      <h4 id="heading">An OTP is sent to your number</h4><br>
+      <p style="text-align: center"><a href="admitKard1.html" >Change Phone Number</a></p><br><br><br>
+    <form class="myForm">
+
+      <input class="input" type="number" id="number1" name="number" value = 1 min=0 max = 9 style="align-self: center; margin-left: 250px;">
+      <input class="input" type="number" id="number1" name="number" value = 2 min=0 max = 9>
+      <input class="input" type="number" id="number1" name="number" value = 3 min=0 max = 9>
+      <input class="input" type="number" id="number1" name="number" value = 4 min=0 max = 9><br>
+
+      <p style="text-align:center">Didn't receive the code? <a href="admitKard2.html" >Resend</a></p>
+
+      <input class="submit" type="submit" id="submit" value="Verify"> 
+
+    </form> 
+  </div>
+  <script>
+    class Validate
+    {
+      constructor(inputArguments)
+      {
+        this.form = inputArguments.form;
+        this.verify = inputArguments.verify;
+      }
+
+      init()
+      {
+        this.verify[0].addEventListener('click' , () => {this.getAlert()} ) ;
+      }
+
+      getAlert()
+      {
+        alert("Are you sure you want to submit?");
+        window.open("admitKard3.html");
+      }
+
+    }
+
+    window.onload = function() {
+    var _form = document.getElementsByClassName("myForm")[0];
+    var inputArguments = {
+      form : _form,
+      verify : _form.querySelectorAll(".submit"),
+    };
+    var validate = new Validate(inputArguments);
+    validate.init();
+    };
+
+  </script>
+</body>
+</html>

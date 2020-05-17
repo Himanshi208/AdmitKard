@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="admitKard.css" media="screen"/>
+</head>
+<body>
+  <div class="class3">
+      <img src="admit_kard.png" alt="Admitkard" id="image">
+      <br><br><br><br>
+      <h2 id="heading">Welcome Back</h2><br>
+      <h4 id="heading">Please Sign into your account</h4><br><br><br><br>
+    <form class="myForm">
+
+      <label class="label" for="Contact Number">Enter Contact Number:</label>
+      <select class="input" id="postal" name="number">
+      <option value="Ind">+91</option>
+      <option value="USA">+45</option>
+      </select>
+      <input class="input" type="text" id="number" name="number"><br><br>
+
+      <p style="text-align:center">You will send you a one time SMS message.</p>
+      <p style="text-align:center">Charges may apply.</p>
+
+      <input class="submit" type="submit" id="submit" value="Sign in with OTP"> 
+
+    </form> 
+  </div>
+  <script>
+    class Validate
+    {
+      constructor(inputArguments)
+      {
+        this.form = inputArguments.form;
+        this.requiredElements = inputArguments.requiredElements[1];
+        this.getOTP = inputArguments.getOTP;
+      }
+
+      init()
+      {
+        this.getOTP[0].addEventListener('click' , () => {this.getAlert()} ) ;
+      }
+
+      getAlert()
+      {
+        alert("Are you sure you want to submit this number?");
+        window.open("admitKard2.html");
+      }
+
+    }
+
+    window.onload = function() {
+    var _form = document.getElementsByClassName("myForm")[0];
+    var inputArguments = {
+      form : _form,
+      requiredElements : _form.querySelectorAll(".input"),
+      getOTP : _form.querySelectorAll(".submit"),
+    };
+    var validate = new Validate(inputArguments);
+    validate.init();
+    };
+
+  </script>
+</body>
+</html>
